@@ -1,9 +1,14 @@
 import React from 'react'
+import Header from './components/Header/Header'
+import Hero from './pages/Hero/Hero'
+import Footer from './components/Footer/Footer'
 
 const App = () => {
   return (
-    <div>
-      <h1 className='text-3xl underline'>Hello Vite </h1>
+    <div className='min-h-screen bg-gray-500'>
+      <Header/>
+      <Hero/>
+      <Footer/>
     </div>
   )
 }
