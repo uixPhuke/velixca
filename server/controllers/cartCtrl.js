@@ -1,4 +1,4 @@
-import Cart from '../models/Cart.js';
+import Cart from '../models/cartSchema.js';
 import Product from '../models/ProductVelixa.js';
 
 //  Get User's Cart
