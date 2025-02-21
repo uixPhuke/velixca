@@ -1,30 +1,28 @@
-const express = require('express');
-require('dotenv').config();
-const mongoose = require('mongoose');
+const express = require("express");
+const dotenv = require("dotenv");
+const cors = require("cors");
+const mongoose = require("mongoose");
 
+const discountRoutes = require("./routers/discountRoutes.js"); // Use require
+
+dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT 
-const URL = process.env.MONGO_URL;
 
-// Middleware to parse JSON bodies
 app.use(express.json());
+app.use(cors());
 
-// Connect to MongoDB
-mongoose.connect(URL)
-  .then(() => {
-    console.log('VELIXA Database connected');
-  })
-  .catch((err) => {
-    console.error('Database connection failed', err);
-  });
+// Routes
+app.use("/api/discounts", discountRoutes);
 
-// Basic route
-app.get('/', (req, res) => {
-  res.json({ "message": "VELIXA's SERVER" });
-});
+const PORT = process.env.PORT 
+const URL=process.env.MONGO_URL
 
-// Start the server
+mongoose
+    .connect(URL)
+    .then(() => console.log("✅ MongoDB Connected"))
+    .catch((err) => console.error("❌ MongoDB Connection Error:", err));
+
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+    console.log(`🚀 Server running on http://localhost:${PORT}`);
 });

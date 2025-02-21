@@ -19,8 +19,12 @@ const discountSchema = new mongoose.Schema({
         default: 0,
         min: [0, 'Minimum purchase amount cannot be negative'],
     },
-  
-    
+    usageLimit: {
+        type: Number,
+        default: 1,
+        min: [1, 'Usage limit must be at least 1'],
+        index: true,
+    },
     usedBy: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'UserVelixa', // Reference to users who used the discount
