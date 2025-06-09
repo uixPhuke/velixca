@@ -19,7 +19,7 @@ export const createProductAdmin = async (req, res, next) => {
     if (sellingPrice === undefined) return res.status(400).json({ success: false, message: 'Selling price is required!' });
     if (costPrice === undefined) return res.status(400).json({ success: false, message: 'Cost price is required!' });
     if (!category) return res.status(400).json({ success: false, message: 'Category is required!' });
-    if (!fabricType) return res.status(400).json({ success: false, message: 'Fabric type is required!' });
+    if (!fabricType) return res.status(400).json({ success: false, message:  'Fabric type is required!' });
     if (!fitType) return res.status(400).json({ success: false, message: 'Fit type is required!' });
     if (!pattern) return res.status(400).json({ success: false, message: 'Pattern is required!' });
     if (!gender) return res.status(400).json({ success: false, message: 'Gender is required!' });

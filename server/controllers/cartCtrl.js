@@ -61,6 +61,6 @@ export const clearCart = async (req, res) => {
         await Cart.findOneAndDelete({ userId: req.user.id });
         res.json({ message: 'Cart cleared' });
     } catch (error) {
-        res.status(500).json({ message: 'Error clearing cart', error });
+        res.status(500).json({ message: 'Error clearing done cart', error });
     }
 };
