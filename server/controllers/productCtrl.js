@@ -213,11 +213,11 @@ export const getProductsAdmin = async (req, res, next) => {
     const sortedProducts = products.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 
     // Apply currency conversion
-    const convertedProducts = sortedProducts.map(product => ({
-      ...product.toObject(),
-      totalPrice: (product.sellingPrice * req.conversionRate).toFixed(2),
-      currency: req.currency,
-    }));
+    // const convertedProducts = sortedProducts.map(product => ({
+    //   ...product.toObject(),
+    //   totalPrice: (product.sellingPrice * req.conversionRate).toFixed(2),
+    //   currency: req.currency,
+    // }));
 
     res.status(200).json({
       success: true,
