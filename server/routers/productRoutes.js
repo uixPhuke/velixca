@@ -17,7 +17,7 @@ const router = express.Router();
 router.post(
   '/admin/create',
   authenticateAdmin,
-  upload.array('images', 5), // Allow up to 5 images
+  upload.array('images', 6), // Allow up to 5 images
   createProductAdmin
 );
 
