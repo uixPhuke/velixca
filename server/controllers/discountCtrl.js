@@ -33,7 +33,7 @@ export const addDiscountCode = async (req, res) => {
         res.status(201).json({ message: "Discount code added successfully", discount });
     } catch (error) {
         console.error("Error adding discount code:", error);
-        res.status(500).json({ message: "Internal server error" });
+        res.status(500).json({ message: "Internal server got error" });
     }
 };
 
